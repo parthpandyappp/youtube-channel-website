@@ -55,7 +55,7 @@ ROOT_URLCONF = 'khushal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['/home/parth/Documents/khushal/templates/ytsite/'],
+        'DIRS': ['/home/noob/Documents/github/youtube-channel-website-master/templates/ytsite/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

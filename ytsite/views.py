@@ -4,7 +4,9 @@ from django.shortcuts import render
 from .models import form_submission
 
 def index(request):
-	return render(request, "index.html")
+    posts = form_submission.objects.all()
+    args = {'posts':posts}
+    return render(request, "index.html", args)
 
 def create_form(request):
 	return render(request, "upload.html")
