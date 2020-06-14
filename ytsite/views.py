@@ -11,17 +11,22 @@ def index(request):
 def create_form(request):
 	return render(request, "upload.html")
 
+# def created(request):
+#     p = request.FILES['image']
+    
+#     user = form_submission(photo = p)
+#     user.save()
+#     return render(request,"created.html")
+
 def created(request):
-	if request.method == 'POST':
-		if request.POST.get('card_name') and request.POST.get('card_details') and request.POST.get('image') and request.POST.get('link'):
-			form = form_submission()
-			form.card_name = request.POST.get('card_name')
-			form.card_text = request.POST.get('card_details')
-			form.photo = request.POST.get('image')
-			form.url = request.POST.get('link')
-			form.save()
-			return render(request, "created.html")
-		else:
-			return render(request, "created.html")
+	form = form_submission()
+	form.card_name = request.POST.get('card_name')
+	form.card_text = request.POST.get('card_details')
+	form.url = request.POST.get('link')
+	form.save()
+	p = request.FILES['image']
+	user = form_submission(photo = p)
+	print("code in this line")
+	user.save()
 	return render(request, "created.html")
-# Create your views here.
+# # Create your views here.

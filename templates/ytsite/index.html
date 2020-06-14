@@ -140,7 +140,7 @@
             {% for posts in posts %}
             <div class="col mb-5">
                 <div class="card" style="width: 21rem;">
-                    <img src="static/images/8.jpg" class="card-img-top" alt="card six">
+                    <img src="{{ posts.photo.url }}" class="card-img-top" alt="card six">
                     <div class="card-body">
                         <h5 class="card-title">{{ posts.card_name }}</h5>
                         <p class="card-text">{{ posts.card_text }}</p>
