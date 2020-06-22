@@ -1,0 +1,61 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    {% for p in usr %} {% if 'Mech_Tech' in p.playlist %}
+    <h1>h boss</h1>
+    <div class="col mb-5">
+        <div class="card" style="width: 21rem;">
+            <img src="{{p.photo.url}}" class="card-img-top" alt="card six">
+            <div class="card-body">
+                <h5 class="card-title">{{p.card_name}}</h5>
+                <p class="card-text">{{p.card_text}}</p>
+                <a href="#" class="btn btn-dark">Watch...</a>
+            </div>
+        </div>
+    </div>
+    {% endif %} {% endfor %}
+</body>
+
+</html> -->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+            {% for p in usr %} {% if 'Trick_Tech' in p.playlist %}
+            <div class="col mb-5">
+                <div class="card" style="width: 21rem;">
+                    <img src="{{p.photo.url}}" class="card-img-top" alt="card six">
+                    <div class="card-body">
+                        <h5 class="card-title">{{p.card_name}}</h5>
+                        <p class="card-text">{{p.card_text}}</p>
+                        <a href="{{ p.url }}" class="btn btn-dark">Watch...</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %} {% endfor %}
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>

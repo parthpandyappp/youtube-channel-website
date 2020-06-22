@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Section</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel='stylesheet' href="{% static 'css/style.css' %}" />
+</head>
+
+<body>
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3">
+
+
+            <div class="col mb-5">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/images/8.jpg" class="card-img-top" alt="card six">
+                    <div class="card-body">
+                        <h5 class="card-title">Comp_Tech</h5>
+                        <p class="card-text">This is a playlist for computer tech</p>
+                        <a href="{% url 'comptech' %}" class="btn btn-dark">Enter into this playlist...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/images/8.jpg" class="card-img-top" alt="card six">
+                    <div class="card-body">
+                        <h5 class="card-title">Mech_Tech</h5>
+                        <p class="card-text">This is a playlist for Mechanical tech</p>
+                        <a href="{% url 'mechtech' %}" class="btn btn-dark">Enter into this playlist...</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-5">
+                <div class="card" style="width: 21rem;">
+                    <img src="static/images/8.jpg" class="card-img-top" alt="card six">
+                    <div class="card-body">
+                        <h5 class="card-title">Tricks_Tech</h5>
+                        <p class="card-text">This is a playlist for Tricks tech</p>
+                        <a href="{% url 'tricktech' %}" class="btn btn-dark">Enter into this playlist...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+</html>
