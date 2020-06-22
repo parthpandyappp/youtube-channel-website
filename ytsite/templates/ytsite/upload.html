@@ -7,10 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload New Card</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href="{% static 'css/style.css' %}" />
+    <link rel="shortcut icon" href="{% static 'images/upload.svg' %}" />
 </head>
 
 <body>
+ <div class="w3-bar w3-grey">
+		<a href="#" class="w3-bar-item w3-button w3-mobile w3-blue">Home</a>
+		<a href="#" class="w3-bar-item w3-button w3-mobile">Link 1</a>
+		<a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
+    	<div class="w3-dropdown-hover w3-mobile">
+      		<button class="w3-button">Dropdown <i class="fa fa-caret-down"></i></button>
+			  <div class="w3-dropdown-content w3-bar-block w3-dark-grey">
+				<a href="#" class="w3-bar-item w3-button w3-mobile">Link 1</a>
+				<a href="#" class="w3-bar-item w3-button w3-mobile">Link 2</a>
+				<a href="#" class="w3-bar-item w3-button w3-mobile">Link 3</a>
+			  </div>
+    	</div>
+  </div>
     <div class="container d-flex h-100">
         <div class="row align-self-center w-100">
             <div class="col-6 mx-auto">
@@ -31,23 +46,23 @@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputEmail1">Card Title</label>
-                        <input type="text" name="card_name" class="form-control" id="cardtitle" aria-describedby="emailHelp" placeholder="Video title here">
+                        <input type="text" name="card_name" class="form-control" id="cardtitle" aria-describedby="emailHelp" placeholder="Video title here" required>
                         <small id="emailHelp" class="form-text text-muted">Remember to keep character count in limit.</small>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Card Text</label>
-                        <input type="text" name="card_details" class="form-control" id="carddetails" placeholder="Description about video">
+                        <input type="text" name="card_details" class="form-control" id="carddetails" placeholder="Description about video" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlFile1">Choose 1920 X 1080 image from your computer</label>
-                        <input type="file" name="image" class="form-control-file" id="imageupload">
+                        <input type="file" name="image" class="form-control-file" id="imageupload" required>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1">Youtube Video Link</label>
-                        <input type="text" name="link" class="form-control" id="youtubevideolink" placeholder="https://youtube.com/">
+                        <input type="text" name="link" class="form-control" id="youtubevideolink" placeholder="https://youtube.com/" required>
                     </div>
                     <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
                         <label class="form-check-label" for="checkbox">Check me out</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
