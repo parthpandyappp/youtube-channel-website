@@ -6,19 +6,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upload New Card</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+    </script>
     <link rel='stylesheet' href="{% static 'css/style.css' %}" />
 </head>
 
 <body>
+    {% if user.is_authenticated %} {% if form.errors %}
+    <p>There's something wrong with what you entered!</p>
+    {% endif %} {% if next %}
+    <p>Hey, you can't access that page.</p>
+    {% endif %}
+    <nav class="navbar navbar-expand-sm bg-light">
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#"> 
+                  About 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#"> 
+                  Contacts 
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"> 
+                  Logout
+                </a>
+            </li>
+        </ul>
+    </nav>
     <div class="container d-flex h-100">
         <div class="row align-self-center w-100">
             <div class="col-6 mx-auto">
-                {% if user.is_authenticated %} {% if form.errors %}
-                <p>There's something wrong with what you entered!</p>
-                {% endif %} {% if next %}
-                <p>Hey, you can't access that page.</p>
-                {% endif %}
+
                 <form action="/created/" method="POST" enctype="multipart/form-data">
                     {% csrf_token %}
                     <div class="form-group">
@@ -52,13 +79,34 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-                {%else%}
-                <h3> Please <a href="/accounts/login/">Login</a> to proceed further</h3>
-                {% endif %}
             </div>
         </div>
     </div>
+    <div class="container">
+        {%else%}
+        <nav class="navbar navbar-expand-sm bg-light">
 
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> 
+                      About 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"> 
+                      Contacts 
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}"> 
+                      Login
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <h3> Please <a href="{% url 'login' %}">Login</a> to proceed further</h3>
+        {% endif %}
+    </div>
 </body>
 
 </html>
