@@ -6,6 +6,9 @@ from .models import form_submission
 def index(request):
 	return render(request, "ytsite/playlist.html")
 
+def about(request):
+    return render(request, "ytsite/about.html")
+
 def create_form(request):
 	return render(request, "ytsite/upload.html")
 # Create your views here. 
@@ -36,5 +39,7 @@ def tricktech(request):
     return render(request, "ytsite/trick_tech.html", {'usr' : usr})
 
 
+
 def nodata(request):
     return render(request, "ytsite/nodata.html")
+
