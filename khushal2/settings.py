@@ -25,7 +25,7 @@ SECRET_KEY = 'c7p5ab6__^g1=j0712n7l1m0q@+_h(%hxy)91@a3ncsrvv6lwz'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['cseandme.herokuapp.com']
 
 
 # Application definition
